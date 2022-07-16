@@ -4,6 +4,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(211, 209, 209);
 }
 
 a {
@@ -14,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 .container {
-    padding: 0 2rem;
+    padding: 2rem;
 }
 .add-task-container {
     position: absolute;
@@ -30,15 +31,60 @@ a {
     justify-content: space-around;
    
 }
-.form input , .form  textarea , .form  button {
+ button {
+    
     font-family: 'Montserrat', sans-serif;
+    border: .2rem solid transparent;
+    border-radius: .3rem;
+    cursor: pointer;
+
+}
+.form input , .form  textarea { 
     padding: .5rem;
-    border: .2rem solid #eee;
-    border-radius: .2rem;
+    font-family: 'Montserrat', sans-serif;
+    border: .2rem solid transparent;
+    border-radius: .3rem;
+
+}
+.form  button {
+    background-color: #000;
+    color: #fff;
+    padding: .5rem;
+
 }
 .error {
     color: red;
 }
 .success { 
-    color: rgb(122, 196, 13);
+    color: rgb(93, 148, 9);
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #171D29;
+    position: relative;
+    color: #fff;
+    width: 200px;
+    border-radius: .2rem;
+    padding: .5rem 1rem ;
+    margin: 1rem ;
+
+}
+.card span { 
+    font-size: 10px;
+    color: rgb(182, 181, 181);
+    position: absolute;
+    top: 45px; left: 20px;
+}
+.btns{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    
 }

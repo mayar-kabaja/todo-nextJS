@@ -19,11 +19,14 @@ function AddTask() {
           body: JSON.stringify({ title: data.get('title'), description: data.get('description') }),
         });
         setMsg('Task Added')
+        setErrMsg('')
       } catch (error) {
           setErrMsg('Somthig Faild')
+          setMsg('')
       }
     } else { 
         setErrMsg('Fields Is Required')
+        setMsg('')
     }
   };
   return (
