@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card({ title , id , time , description , isDone}) {
+function Card({ title , id , time , description , isDone , handleIsDone , handleDelete}) {
   return (
     <div className='card' id={id}>
         <p>{title}</p>
@@ -10,9 +10,9 @@ function Card({ title , id , time , description , isDone}) {
         }
         <div className='btns'>
         {
-            isDone ? null :<button >Done</button>
+            isDone ? null :<button onClick={handleIsDone}>Done</button>
         }
-        <button>Delete</button>
+        <button onClick={handleDelete}>Delete</button>
         </div>
     </div>
   )

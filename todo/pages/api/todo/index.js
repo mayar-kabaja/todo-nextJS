@@ -1,5 +1,5 @@
-import dbConnect from '../../database/dbConnect';
-import toDoSchema from '../../database/models/toDoSchema';
+import dbConnect from '../../../database/dbConnect';
+import toDoSchema from '../../../database/models/toDoSchema';
 
 dbConnect();
 
