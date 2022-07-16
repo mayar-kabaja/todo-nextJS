@@ -22,4 +22,4 @@ const toDoSchema = new mongoose.Schema({
   },
 });
 
-export default toDoSchema;
+module.exports = mongoose.models.toDoSchema || mongoose.model("toDoSchema", toDoSchema);

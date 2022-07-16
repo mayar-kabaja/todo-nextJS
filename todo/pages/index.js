@@ -1,9 +1,11 @@
-import styles from '../styles/Home.module.css'
+import React , { useEffect } from 'react';
+import Link from 'next/link'
+
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      HOME
+    <div className="container">
+     
     </div>
   )
 }
