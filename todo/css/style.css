@@ -70,7 +70,7 @@ a {
     background-color: #171D29;
     position: relative;
     color: #fff;
-    width: 200px;
+    width: 220px;
     border-radius: .2rem;
     padding: .5rem 1rem ;
     margin: 1rem ;
@@ -80,11 +80,11 @@ a {
     font-size: 10px;
     color: rgb(182, 181, 181);
     position: absolute;
-    top: 45px; left: 20px;
+    top: 42px; left: 20px;
 }
 .btns{
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
     
 }

@@ -6,7 +6,7 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
   const getNotes = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/todo', {
+      const res = await fetch('/api/task', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -21,7 +21,7 @@ export default function Home() {
   };
   const handleIsDone = async({ target : { parentNode : { parentNode : { id}}}}) => {
       try {
-        const res = await fetch(`http://localhost:3000/api/todo/${id}`, {
+        const res = await fetch(`/api/task/${id}`, {
           method: 'PUT',
           headers: {
             Accept: 'application/json',
@@ -34,7 +34,7 @@ export default function Home() {
   }
   const handleDelete = async({ target : { parentNode : { parentNode : { id}}}}) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/todo/${id}`, {
+      const res = await fetch(`/api/task/${id}`, {
         method: 'DELETE',
         headers: {
           Accept: 'application/json',
@@ -54,12 +54,11 @@ export default function Home() {
         <button>Add Task</button>
       </Link>
       <ul className='card-container'>
-        {tasks?.map(({ title, _id, date, description, isDone }) => (
+        {tasks?.map(({ title, _id, date, isDone }) => (
           <Card
             title={title}
             id={_id}
             time={date.split('T')[1].split('.')[0]}
-            description={description}
             isDone = {isDone}
             handleIsDone={handleIsDone}
             handleDelete={handleDelete}

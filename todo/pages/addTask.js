@@ -10,7 +10,7 @@ function AddTask() {
     const data = new FormData(event.target);
     if (data.get('title') && data.get('description')) {
       try {
-        await fetch('/api/todo', {
+        await fetch('/api/task', {
           method: 'POST',
           headers: {
             Accept: 'application/json',

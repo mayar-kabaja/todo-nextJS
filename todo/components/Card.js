@@ -1,21 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { useRouter } from 'next/router';
 
-function Card({ title , id , time , description , isDone , handleIsDone , handleDelete}) {
+function Card({ title, id, time, isDone, handleIsDone, handleDelete }) {
+  const router = useRouter();
   return (
-    <div className='card' id={id}>
+    <div className="card" id={id} >
+      {isDone ? (
+        <strike>
+          <p>{title}</p>
+        </strike>
+      ) : (
         <p>{title}</p>
-        <span>{time}</span>
-        {
-            isDone ? <p><strike>{description}</strike></p> : <p>{description}</p>
-        }
-        <div className='btns'>
-        {
-            isDone ? null :<button onClick={handleIsDone}>Done</button>
-        }
+      )}
+
+      <span>{time}</span>
+      <div className="btns">
+        {isDone ? null : <button onClick={handleIsDone}>Done</button>}
         <button onClick={handleDelete}>Delete</button>
-        </div>
+        <button onClick={() => router.push(`/task/${id}`)}>view</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

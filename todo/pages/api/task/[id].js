@@ -9,6 +9,16 @@ export default async (req, res) => {
         method,
       } = req;
       switch (method) {
+        case "GET":
+            try {
+              const task = await toDoSchema.findById(id);
+              if (!task) res.status(400).json({ success: false });
+      
+              res.status(200).json({ success: true, data: task });
+            } catch (error) {
+              res.status(400).json({ success: false });
+            }
+            break;
         case "PUT":
             try {
               const task = await toDoSchema.findByIdAndUpdate(id, { isDone : true }, {
@@ -17,7 +27,7 @@ export default async (req, res) => {
               });
               if (!task) res.status(400).json({ success: false });
       
-              res.status(200).json({ success: true, data: note });
+              res.status(200).json({ success: true, data: task });
             } catch (error) {
               res.status(400).json({ success: false });
             }
